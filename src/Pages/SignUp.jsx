@@ -101,15 +101,21 @@ export default function SignUp() {
             
           </div>
 
-          <div className="botones-finales terminos">
+          <div className="botones-finales">
             <button type="submit" className="submit-btn">SUBMIT</button>
             <button type="button" className="btn-condiciones">TÉRMINOS Y CONDIC</button>
           </div>
         </form>
 
         <div className="acciones-secundarias">
-          <p>¿YA TENÉS CUENTA? <span className="link" onClick={() => navigate('/signin')}>INICIÁ SESIÓN</span></p>
-          <p>¿OLVIDASTE TU CONTRASEÑA? <span className="link">RESETEALA</span></p>
+          <div className="secundarias">
+            <p>¿YA TENÉS CUENTA? </p>
+              <span className="link" onClick={() => navigate('/signin')}>INICIÁ SESIÓN</span>
+          </div>
+          <div className="secundarias">
+            <p>¿OLVIDASTE TU CONTRASEÑA? </p>
+            <span className="link">RESETEALA</span>
+          </div>
         </div>
       </div>
     </div>

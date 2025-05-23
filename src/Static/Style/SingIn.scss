@@ -1,0 +1,104 @@
+.login-container {
+    background-color: #0d0d0d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    .login-box {
+        background-color: #fce6a4;
+        padding: 30px;
+        border: 14px solid #282828;
+        width: 300px;
+        text-align: center;
+        color: #000;
+        
+        .login-header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 20px;
+
+            .logo{
+                width: 14em;
+            }
+            .close-btn {
+                background-color: #000;
+                width: 30px;
+                height: 30px;
+                color: #fff;
+                font-size: large;
+                cursor: pointer;
+                &:hover {
+                    color: #e8503f;
+                }
+            }
+
+        }
+        label{
+            font-family: Agency FB;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-align: center;
+
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: none;
+            background: #1f1f1f;
+            color: #fff;
+        }
+
+        .password-wrapper {
+        position: relative;
+        }
+
+        .eye-icon {
+            position: absolute;
+            right: 10px;
+            top: 35%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #555;
+        
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            
+            .submit-btn {
+                background-color: #3b3b3b;
+                color: #fff3b0;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+                width: 48%;
+            }
+            
+            .terms-btn {
+                background-color: #e8503f;
+                color: #fff;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+                width: 48%;
+            }
+        }
+
+        .links {
+            margin-top: 15px;
+            font-size: 0.8em;
+        }
+
+        .link {
+            color: red;
+            cursor: pointer;
+        }
+    }
+}
