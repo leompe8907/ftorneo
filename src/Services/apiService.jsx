@@ -1,9 +1,10 @@
 import axios from 'axios';
+import {useError} from '../Components/ErrorContext'
 
 // Configuración inicial de Axios
 const api = axios.create({
     // Base URL dinámico según el entorno
-    baseURL: 'http://localhost:8000/torneo/' || "",
+    baseURL: 'http://localhost:8000/torneo/',
     headers: {
         'Content-Type': 'application/json',
     },
@@ -25,27 +26,24 @@ api.interceptors.request.use((config) => {
 
 // Interceptor de respuestas para manejo global de errores
 api.interceptors.response.use(
-    (response) => response,
-    (error) => {
+    response => response,
+    error => {
         if (error.response) {
-            // Manejo de errores basados en el código de estado
             switch (error.response.status) {
                 case 401:
-                    alert('No autorizado. Por favor, inicie sesión nuevamente.');
+                    useError('No autorizado. Por favor, inicie sesión nuevamente.');
                     break;
                 case 403:
-                    alert('Acceso prohibido. No tiene los permisos necesarios.');
+                    useError('Acceso prohibido.');
                     break;
                 case 500:
-                    alert('Error interno del servidor. Por favor, intente más tarde.');
+                    useError('Error interno del servidor.');
                     break;
                 default:
-                    alert(`Error desconocido: ${error.response.status}`);
+                    useError(`Error desconocido: ${error.response.status}`);
             }
-        } else if (error.request) {
-            alert('No se recibió respuesta del servidor. Verifique su conexión a Internet.');
         } else {
-            console.error('Error al configurar la solicitud:', error.message);
+            useError('No se recibió respuesta del servidor.');
         }
         return Promise.reject(error);
     }

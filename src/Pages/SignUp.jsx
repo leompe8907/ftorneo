@@ -38,7 +38,9 @@ export default function SignUp() {
         confirmar_contraseña: cContraseña,
       });
       setModalMsg(response.data.mensaje);
-      navigate('/signin');
+      setTimeout(() => {
+        navigate('/signin');
+      }, 3000);;
     } catch (err) {
       if (err.response?.data) {
         const errores = Object.values(err.response.data).flat().join('\n');
@@ -47,11 +49,18 @@ export default function SignUp() {
     }
   };
 
+  const hanbleBack = () =>{
+    navigate('/');
+  };
+
   return (
     <>
       <div className="containner-register-general">
         <div className="containner-register-interno">
-          <img src={logo} alt="logo" className="logo" />
+          <div className="login-header">
+            <img className="logo" src={logo} alt="Logo"/>
+            <button className="close-btn" onClick={hanbleBack}>✖</button>
+          </div>
           <form onSubmit={handleSubmit}>
             <div className="inputNombre">
               <h4 className="tittle-input">NOMBRE</h4>

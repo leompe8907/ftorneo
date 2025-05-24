@@ -1,9 +1,9 @@
 import api from './apiService';
 
 const authService = {
-    login: async (username, password) => {
+    login: async (email, contraseña) => {
         try {
-            const response = await api.post('login/', { username, password });
+            const response = await api.post('login/', { email, contraseña });
             const { access } = response.data;
             localStorage.setItem('accessToken', access);
             return access;

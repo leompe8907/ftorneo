@@ -25,6 +25,10 @@ export default function SignIn() {
         }
     };
 
+    const hanbleBack = () =>{
+        navigate('/');
+    };
+
 
     return (
         <>
@@ -32,7 +36,7 @@ export default function SignIn() {
                 <div className="login-box">
                     <div className="login-header">
                         <img className="logo" src={logo} alt="Logo"/>
-                        <button className="close-btn">✖</button>
+                        <button className="close-btn" onClick={hanbleBack}>✖</button>
                     </div>
                     <label>Email</label>
                     <input 
