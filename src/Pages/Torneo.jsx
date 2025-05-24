@@ -1,19 +1,17 @@
 import React, {useState} from 'react';
-import { useNavigate } from 'react-router-dom';
 import { usePollingTorneos } from '../Hooks/usePollingTorneos';
 
 import CrearTorneoModal from '../Components/CrearTorneoModal';
 import NavBar from '../Components/NavBar'
 import Footer from '../Components/Footer'
 
-import '../Static/Style/Torneo.scss'; // Asegúrate de tener el estilo importado
+import '../Static/Style/Torneo.scss';
 
 export default function Torneo() {
 
   const [mostrarModal, setMostrarModal] = useState(false);
 
-  const navigate = useNavigate();
-  const { torneos, error } = usePollingTorneos(10000); // cada 10 segundos
+  const { torneos, error } = usePollingTorneos(10000);
 
 
   return (
