@@ -4,35 +4,33 @@ import axios from 'axios';
 
 const useFetchData = (endpoint) => {
   const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false); // Inicialmente no está cargando
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Verifica si el endpoint es válido antes de realizar la solicitud
     if (!endpoint) return;
 
     const source = axios.CancelToken.source();
 
     const fetchData = async () => {
-      setLoading(true); // Activa el estado de carga al iniciar la solicitud
-      setError(null);   // Resetea el error previo
+      setLoading(true);
+      setError(null); 
       try {
         const response = await api.get(endpoint, { cancelToken: source.token });
-        setData(response.data); // Actualiza los datos obtenidos
+        setData(response.data);
       } catch (err) {
         if (!axios.isCancel(err)) {
-          setError(err); // Guarda el error si no es una cancelación
+          setError(err);
         }
       } finally {
-        setLoading(false); // Finaliza el estado de carga
+        setLoading(false);
       }
     };
 
     fetchData();
 
-    // Cancela la solicitud si el componente se desmonta
     return () => source.cancel('Solicitud cancelada por desmontaje.');
-  }, [endpoint]); // Se ejecuta solo cuando el endpoint cambia
+  }, [endpoint]);
 
   return { data, loading, error };
 };
