@@ -24,7 +24,7 @@ Aplicación web construida con React que permite la autenticación de usuarios y
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tuusuario/ftorneo.git
+   git clone https://github.com/leompe8907/ftorneo.git
    cd ftorneo
 
 2. Instala las dependencias:
