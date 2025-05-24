@@ -7,7 +7,6 @@ Aplicación web construida con React que permite la autenticación de usuarios y
 - **SASS**: Preprocesador CSS.
 - **Axios**: Cliente HTTP para interactuar con APIs.
 - **FontAwesome**: Íconos escalables para la interfaz.
-- **Testing Library**: Pruebas unitarias y de integración.
 
 ## 🚀 Funcionalidades
 
